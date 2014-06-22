@@ -16,24 +16,16 @@ path  <- getwd()
 url   <- "http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 f     <- "Dataset.zip"
 
-if (!file.exists(path)) {
-  dir.create(path)
-}
 download.file(url, file.path(path, f))
 
 # Manually unzipped file opens in "UCI HAR Dataset" folder
 
 pathdata <- file.path(path, "UCI HAR Dataset")
-list.files(pathdata, recursive = TRUE)
 
 # Read files
 
-fileToDataTable <- function(f) {
-  df <- read.table(f)
-  dt <- data.table(df)
-}
-dtTrain <- fileToDataTable(file.path(pathdata, "train", "X_train.txt"))
-dtTest  <- fileToDataTable(file.path(pathdata, "test", "X_test.txt"))
+dtTrain <- data.table(read.table(file.path(pathdata, "train", "X_train.txt")))
+dtTest  <- data.table(read.table(file.path(pathdata, "test", "X_test.txt")))
 
 dtSubjectTrain  <- fread(file.path(pathdata, "train", "subject_train.txt"))
 dtSubjectTest   <- fread(file.path(pathdata, "test", "subject_test.txt"))
