@@ -74,7 +74,7 @@ dt      <- dt[, select, with = FALSE]
 
 # Reshape data
 
-setkey(dt, subject, activityNum, activityName)
+setkey(dt, subject, activityNum)
 dt <- data.table(melt(dt, key(dt), variable.name = "featureCode"))
 
 # Merge in data labels
@@ -89,14 +89,18 @@ dt <- merge(dt,
             all.x = TRUE)
 
 # Split featureName
+#   Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+#   Triaxial Angular velocity from the gyroscope. 
+#   A 561-feature vector with time and frequency domain variables. 
 
-dt$featureType = as.character(lapply(strsplit(as.character(dt$featureName), split = "-"), "[", 1))
-dt$featureStat = as.character(lapply(strsplit(as.character(dt$featureName), split = "-"), "[", 2))
-dt$featureAxis = as.character(lapply(strsplit(as.character(dt$featureName), split = "-"), "[", 3))
+dt$featureType    <- as.character(lapply(strsplit(as.character(dt$featureName), split = "-"), "[", 1))
+dt$featureStat    <- as.character(lapply(strsplit(as.character(dt$featureName), split = "-"), "[", 2))
+dt$featureAxis    <- as.character(lapply(strsplit(as.character(dt$featureName), split = "-"), "[", 3))
+dt$featureDomain  <- substr(dt$featureType, 1, 1)
 
 # Create tidy dataset of averages
 
-setkey(dt, subject, activityName, featureType, featureStat, featureAxis)
+setkey(dt, subject, activityName, featureType, featureDomain, featureStat, featureAxis)
 dtTidy <- dt[, list(count = .N, average = mean(value)), by = key(dt)]
 
 write.table(dtTidy, "tidydata.txt", sep="\t")
