@@ -1,6 +1,21 @@
 # Codebook
-## Dataset: tidydata.txt
-## Source Code: run_analysis.R
+**Source: Human Activity Recognition Using Smartphones Dataset Version 1.0**
+**Dataset: tidydata.txt**
+**Code: run_analysis.R**
+
+**Variables**
+
+| Name 			| Description           																|
+| ------------- | ------------------------------------------------------------------------------------- |
+| subject      	| subject																				|
+| activityName  | activity: LAYING, SITTING, STANDING, WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS    |
+| featureType 	| feature signals																		|
+| featureStat 	| mean(), std()      																	|
+| featureAxis 	| 3-axial signals in the X, Y, Z  directions    										|
+| count 		| calculated count      																|
+| average 		| calculated average      																|
+
+**Features**
 
 > "The features selected for this database come from the accelerometer and gyroscope 
 > 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to 
@@ -22,14 +37,3 @@
 > "These signals were used to estimate variables of the feature vector for each pattern: 
 > '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions."
 
-*Variables*
-
-| Name 			| Description           							|
-| ------------- | ------------------------------------------------- |
-| subject      	| subject											|
-| activityName  | activity: LAYING, SITTING, STANDING, WALKING*    	|
-| featureType 	| feature signals									|
-| featureStat 	| mean(), std()      								|
-| featureAxis 	| 3-axial signals in the X, Y, Z  directions    	|
-| count 		| calculated count      							|
-| average 		| calculated average      							|
