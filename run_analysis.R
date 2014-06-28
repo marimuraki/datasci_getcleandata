@@ -41,13 +41,13 @@ setnames(dtFeatures, names(dtFeatures), c("featureNum", "featureName"))
 
 # Merge training & test sets
 
-# Combine rows
+# Combine rows: train & test sets
 
 dtSubject   <- rbind(dtSubjectTrain, dtSubjectTest)
-setnames(dtSubject, "V1", "subject")
+setnames(dtSubject, names(dtSubject), "subject")
 
 dtActivity  <- rbind(dtActivityTrain, dtActivityTest)
-setnames(dtActivity, "V1", "activityNum")
+setnames(dtActivity, names(dtActivity), "activityNum")
 
 dt <- rbind(dtTrain, dtTest)
 
