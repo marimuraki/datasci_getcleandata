@@ -7,15 +7,15 @@
 
 **Variables**
 
-| Name 			| Description           																|
-| ------------- | ------------------------------------------------------------------------------------- |
-| subject      	| subject																				|
-| activityName  | activity: LAYING, SITTING, STANDING, WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS    |
-| featureType 	| feature signals																		|
-| featureStat 	| mean(), std()      																	|
-| featureAxis 	| 3-axial signals in the X, Y, Z  directions    										|
-| count 		| calculated count      																|
-| average 		| calculated average      																|
+| Name 			| Description           																| Type		|
+| ------------- | ------------------------------------------------------------------------------------- | ---------	|
+| subject      	| subject																				| numeric	|
+| activityName  | activity: LAYING, SITTING, STANDING, WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS    | char		|
+| featureType 	| feature signals																		| char		|
+| featureStat 	| mean(), std()      																	| char		|
+| featureAxis 	| 3-axial signals in the X, Y, Z  directions    										| char		|
+| count 		| calculated count      																| numeric	|
+| average 		| calculated average      																| numeric	|
 
 **Features**
 
