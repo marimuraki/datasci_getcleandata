@@ -1,6 +1,8 @@
 # Codebook
 **Source: Human Activity Recognition Using Smartphones Dataset Version 1.0**
+
 **Dataset: tidydata.txt**
+
 **Code: run_analysis.R**
 
 **Variables**
